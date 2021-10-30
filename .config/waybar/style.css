@@ -1,0 +1,111 @@
+    /*НАСТРОЙКИ ДЛЯ ВСЕХ ЭЛЕМЕНТОВ*/
+    * {
+        font-family: FiraCode Nerd Font Mono; /*ШРИФТЫ*/
+        font-size: 14px; /*РАЗМЕР ШРИФТА*/
+        min-height: 0; /*МИНИМАЛЬНАЯ ВЫСОТА*/
+        border-radius: 0; /*СКРУГЛЕНИЕ*/
+    }
+
+    /*ПАНЕЛЬ*/
+    window#waybar {
+        background-color: #16033b; /*ЦВЕТ ФОНА*/
+        border-bottom: 0px solid #000000; /*РАМКА ВНИЗУ*/
+    }
+
+    /*КНОПКИ ВОРКСПЕЙСОВ*/
+    #workspaces button {
+        padding: 0 5px; /*ВНУТРЕННИЙ ОТСТУП*/
+        margin: 0 0px; /*ВНЕШНИЙ ОТСТУП*/
+        border-right: 7px solid #2c0b6e; /*РАМКА СПРАВА*/
+        border-left: 7px solid #2c0b6e; /*РАМКА СЛЕВА*/
+        color: #19181c; /*ЦВЕТ*/
+        background: #2c0b6e; /*ЦВЕТ ФОНА*/
+    }
+
+    /*КНОПКИ ВОРКСПЕЙСОВ ПРИ НАВЕДЕНИИ*/
+    #workspaces button:hover {
+        color: #16033b; /*ЦВЕТ*/
+        background: #2c0b6e; /*ЦВЕТ ФОНА*/
+        box-shadow: inset 0 -3px #8dd7fe; /*НАСТРОЙКА ПОЛОСКИ ПОД КНОПКОЙ*/
+    }
+
+    /*АКТИВНАЯ КНОПКА ВОРКСПЕЙСА*/
+    #workspaces button.focused {
+        box-shadow: inset 0 -3px #35557c; /*НАСТРОЙКА ПОЛОСКИ ПОД КНОПКОЙ*/
+        color: #954af7; /*ЦВЕТ*/
+        background: #2c0b6e; /*ЦВЕТ ФОНА*/
+    }
+
+    /*КНОПКА ВОРКСПЕЙСА ТРЕБУЮЩАЯ ВНИМАНИЯ*/
+    #workspaces button.urgent {
+        background-color: #eb4d4b; /*ЦВЕТ ФОНА*/
+    }
+
+    /*ФОНЫ ДЛЯ ЭЛЕМЕНТОВ ПАНЕЛИ, СНАЧАЛО ПЕРЕЧИСЛЕННЫ ВСЕ ЧЕРЕЗ ЗАПЯТУЮ, ПОТОМ ПРИСВОЕННЫ СВОЙСТВА. МОЖНО ДЛЯ КАЖДОГО ЭЛЕМЕНТА ТАК СДЕЛАТЬ, НО У МЕНЯ ОДИНАКОВЫЕ ДЛЯ ВСЕХ, ПОЭТОМУ ПРОЩЕ ОБЪЕДИНИТЬ В ГРУППУ.*/
+    #backlight,
+    #battery,	
+    #clock, /*ЧАСЫ*/
+    #pulseaudio, /*УРОВЕНЬ ЗВУКА*/
+    #language, /*РАСКЛАДКА КЛАВИАТУРЫ*/
+    #tray, /*АКТИВНОЕ ПРИЛОЖЕНИЕ*/
+    #taskbar, /*ТАСКБАР*/
+    #cpu, /*ЗАГРУЖЕННОСТЬ ПРОЦЕССОРА*/
+    #memory /*ЗАНЯТО ПАМЯТИ*/
+    {
+        background: #2c0b6e; /*ЦВЕТ ФОНА*/
+        color: #954af7; /*ЦВЕТ*/
+        padding: 0 10px; /*ВНУТРЕННИЙ ОТСТУП*/
+        margin: 0 0px; /*ВНЕШНИЙ ОТСТУП*/
+    }
+    
+    #network
+    {
+        background: #2c0b6e; /*ЦВЕТ ФОНА*/
+        color: #954af7; /*ЦВЕТ*/
+        padding: 0 10px; /*ВНУТРЕННИЙ ОТСТУП*/
+        margin: 0 0px; /*ВНЕШНИЙ ОТСТУП*/
+	min-width: 300px
+    }	
+	
+    #window /*ТРЕЙ*/ 
+    {
+	background: #2c0b6e; /*ЦВЕТ ФОНА*/
+        color: #954af7; /*ЦВЕТ*/
+        padding: 0 10px; /*ВНУТРЕННИЙ ОТСТУП*/
+        margin: 0 0px; /*ВНЕШНИЙ ОТСТУП*/
+	min-width: 300px;	
+    }  
+
+    	
+
+    /*ТАСКБАР ПРИ НАВЕДЕНИИ*/
+    #taskbar button:hover {
+        color: #ffebb8; /*ЦВЕТ*/
+        background: #2c0b6e; /*ЦВЕТ ФОНА*/
+        box-shadow: inset 0 -3px #8dd7fe; /*НАСТРОЙКА ПОЛОСКИ ПОД КНОПКОЙ*/
+    }
+
+    /*МОДУЛЬ CMUS*/
+    #custom-cmus {
+        background-color: #2c0b6e; /*ЦВЕТ ФОНА*/
+        color: #954af7; /*ЦВЕТ*/
+        min-width: 300px; /*МИНИМАЛЬНАЯ ШИРИНА*/
+    }
+
+    /*НАСТРОЙКА СТРЕЛОК НА ПАНЕЛИ*/
+    #custom-right,
+    #custom-left {
+        font-size: 20px;  /*РАЗМЕР ШРИФТА*/
+        color: #2c0b6e;  /*ЦВЕТ*/
+        padding: 0 0px; /*ВНУТРЕННИЙ ОТСТУП*/
+        margin: 0 0px; /*ВНЕШНИЙ ОТСТУП*/
+    }
+    #custom-right2,
+    #custom-left2 {
+        font-size: 20px;  /*РАЗМЕР ШРИФТА*/
+        color: #16033b;  /*ЦВЕТ*/
+        background: #2c0b6e; /*ЦВЕТ ФОНА*/
+        padding: 0 0px; /*ВНУТРЕННИЙ ОТСТУП*/
+        margin: 0 0px; /*ВНЕШНИЙ ОТСТУП*/
+    }
+

@@ -1,0 +1,214 @@
+{
+//СЛОЙ НА КОТОРОМ БУДЕН НАХОДИТСЯ WAYBAR. ПО ДЕФОЛТУ НА САМОМ ВЕРХНЕМ:
+    // "layer": "top",
+
+//ПОЛОЖЕНИЕ ПАНЕЛИ НА ЭКРАНЕ TOP, BOTTOM, LEFT, RIGHT:
+    // "position": "bottom",
+
+//ВЫСОТА ПАНЕЛИ:
+    "height": 25,
+
+//ШИРИНА ПАНЕЛИ:
+    // "width": 1280,
+
+//МОДУЛИ СЛЕВА, ПО ЦЕНТРУ, СПРАВА:
+    "modules-left": [
+"sway/workspaces",
+"custom/right",
+"custom/right2",
+"sway/window",
+"custom/right",
+"custom/right2",
+"wlr/taskbar",
+"custom/right",
+"custom/right2",
+"custom/right",
+"custom/right2",
+"battery",
+"custom/right",
+"custom/right2"
+    ],	   
+   "modules-right": [ 
+"custom/left2", "custom/left",
+"cpu",
+"custom/left2", "custom/left",
+"memory",
+"custom/left2", "custom/left",
+"pulseaudio",
+"custom/left2", "custom/left",
+"network",
+"custom/lang",
+"custom/left2", "custom/left",
+"sway/language",
+"custom/left2", "custom/left",
+"clock"
+],
+
+//НАСТРОЙКА МОДУЛЯ ВОРКСПЕЙСОВ:
+      "sway/workspaces": {
+	//ПРОКРУТКА КОЛЕСОМ МЫШИ:
+          "disable-scroll": false,
+	//КАКАЯ ТО ХРЕНЬ ДЛЯ НЕСКОЛЬКИХ ПАНЕЛЕЙ:
+          "all-outputs": true,
+	//ЧТО БУДЕТ ОТОБРАЖАТЬСЯ В НАЗАВАНИИ, ИКОНКА КАК НИЖЕ ИЛИ ИМЯ {name}:
+          "format": "{icon}", 
+	//СОБСТВЕННО НАСТРОЙКИ ИКОНОК ДЛЯ ВОРКСПЕЙСОВ:
+          "format-icons": {
+              "1": "1",
+              "2": "2",
+              "3": "3",
+              "4": "4",
+              "5": "5",
+             "urgent": "❗",
+              "focused": "🚀",
+               "default": "🚌"
+          }
+      },
+
+
+//НАСТРОЙКА ПОВЕДЕНИЯ КНОПОК ПЕРЕКЛЮЧЕНИЯ ВОРКСПЕЙСОМ, ТРОГАТЬ ТОЛЬКО ЕСЛИ ДОФИГА УМНЫЙ:
+    "sway/mode": {
+        "format": "<span style=\"italic\">{}</span>"
+    },
+
+//ОТОБРАЖЕНИЕ МОДУЛЯ MPD, ФОРМАТЫ И ИКОНКИ, ДУМАЮ САМ ДОГАДАЕШЬСЯ ЧТО ЕСТЬ ЧТО, Я ВОТ НЕ ОСИЛИЛ И ПОЛЬЗУЮСЬ CMUS:
+    "mpd": {
+        "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ ",
+        "format-disconnected": "Disconnected ",
+        "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
+        "unknown-tag": "N/A",
+        "interval": 2,
+        "consume-icons": {
+            "on": " "
+        },
+        "random-icons": {
+            "off": "<span color=\"#f53c3c\"></span> ",
+            "on": " "
+        },
+        "repeat-icons": {
+            "on": " "
+        },
+        "single-icons": {
+            "on": "1 "
+        },
+        "state-icons": {
+            "paused": "",
+            "playing": ""
+        },
+        "tooltip-format": "MPD (connected)",
+        "tooltip-format-disconnected": "MPD (disconnected)"
+    },
+
+
+//ТРЕЙ, РАЗМЕР ИКОНОК И РАСТОЯНИЕ МЕЖДУ НИМИ:
+    "tray": {
+        // "icon-size": 41,
+        "spacing": 10
+    },
+
+
+//ЧАСЫ, ВРЕМЕННАЯ ЗОНА, ФОРМАТ ОТОБРАЖЕНИЯ И ФОРМАТ ОТОБРАЖЕНИЯ ПОСЛЕ НАЖАТИЯ ЛКМ:
+    "clock": {
+        // "timezone": "America/New_York",
+        "format": "  {:%H:%M}"
+        //"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        //"format-alt": "{:%Y-%m-%d}"
+    },
+
+//ОТОБРАЖЕНИЕ ЗАГРУЖЕННОСТИ ПРОЦЕССОРА, ФОРМАТ И ВСПЛЫВАЮЩАЯ ПОДСКАЗКА:
+    "cpu": {
+        "format": "🏭 {usage}%",
+        "tooltip": false
+    },
+
+//ОТОБРАЖЕНИЕ КОЛИЧЕСТВА ПОЖИРАЕМОЙ ПАМЯТИ:
+    "memory": {
+        "format": "💾 {}%"
+    },
+//РАСКЛАДКА КЛАВИАТУРЫ:
+	"sway/language": {
+		"format": "  {}",
+		"tooltip": false
+	},
+
+    "battery": {
+        "format": "{icon} {capacity}%",
+        "states": {
+            "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format-icons": ["", "", "", "", ""],
+        "disable-inotify": true
+    },	
+    "network": {
+	"family": "ipv4",
+	// "interface": "wlp2*", // (Optional) To force the use of this interface
+	"format": "<span color='#589df6'></span> <span color='gray'>{essid}</span> {frequency} <span color='#589df6'>⇵</span> {bandwidthUpBits}/{bandwidthDownBits}",
+	// "format-ethernet": "{ifname}: {ipaddr}/{cidr} ",
+	"format-linked": "{ifname} (No IP) ",
+	"format-disconnected": "Disconnected ⚠",
+	"format-alt": "{ifname}: {ipaddr}/{cidr}",
+	"interval": 5
+    },
+//ВЫВОД УРОВНЯ ГРОМКОСТИ С ПУЛЬСАУДИО, КОЛИЧЕСТВО ПРОЦЕНТОВ ПРИ СКРОЛЛЕ, ФОРМАТЫ ВЫВОДА И ЧТО ЗАПУСТИТЬ ПРИ КЛИКЕ ЛКМ:
+    "pulseaudio": {
+        // "scroll-step": 1, // %, can be a float
+        "format": "{icon} {volume}%",
+        "format-bluetooth": "{volume}% {icon} {format_source}",
+        "format-bluetooth-muted": " {icon} {format_source}",
+        "format-muted": " {format_source}",
+        "format-source": "{volume}% ",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        "on-click": "pavucontrol"
+    },
+//ОТОБРАЖЕНИЕ АКТИВНОГО ОКНА, ФОРМАТ, МАКСИМАЛЬНАЯ ДЛИНА, МИНИМАЛЬНАЯ ДЛИНА, ПОДЗКАЗКА ПРИ НАВЕДЕНИИ:
+        "sway/window": {
+                "format": "{}",
+		"max-length": 20,
+		"min-length": 20,
+		"tooltip": false
+	},
+
+//ТАСКБАР, ФОРМАТ, РАЗМЕР ИКОНОК, ТЕМА, ПОДЗКАЗКА...:
+"wlr/taskbar": {
+    "format": "{icon}",
+    "icon-size": 14,
+    "icon-theme": "JetBrainsMono",
+    "tooltip-format": "{title}",
+    "on-click": "activate",
+    "on-click-middle": "close"
+},
+
+//ЭТО НУЖНО ДЛЯ ТОГО ЧТО БЫ СДЕЛАТЬ СТРЕЛОЧКИ НА ПАНЕЛИ:
+    "custom/left": {
+        "format": "",
+        "tooltip": false,
+    },
+
+    "custom/left2": {
+        "format": "",
+        "tooltip": false,
+    },
+
+    "custom/right": {
+        "format": "",
+        "tooltip": false,
+    },
+
+    "custom/right2": {
+        "format": "",
+        "tooltip": false,
+    }
+   
+//ЧТО ТО НА ТЕХНИЧЕСКОМ, НЕ ТРОГАЙ ЭТО
+}
