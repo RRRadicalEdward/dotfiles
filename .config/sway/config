@@ -91,8 +91,8 @@ input type:keyboard {
     # Reload the configuration file
     bindsym $mod+Shift+c reload
 
-    # Exit sway (logs you out of your Wayland session)
-    bindsym $mod+Shift+e exec swaymsg exit
+    # Shutdown/Reboot/Log out/Sleep with wofi
+    bindsym $mod+Shift+e exec sh .config/wofi/wofi-power.sh
 #
 # Moving around:
 #
