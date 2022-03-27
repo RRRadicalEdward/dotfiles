@@ -1,0 +1,15 @@
+configuration {
+	width: 600;
+	height: 400;
+	font: "FiraCode 12";
+	modes: "run,drun";
+	case-sensetive: true;
+	terminal: "alacritty";
+	show-icons: true;
+	kb-mode-next: "Control+Tab,Shift+Right";
+	scroll-method: 1;	
+}
+
+//@theme "themes/glue_pro_blue"
+//@theme "/home/sasha/.config/rofi/themes/Monokai.rasi"
+@theme "/home/sasha/.config/rofi/themes/squared-nord.rasi"

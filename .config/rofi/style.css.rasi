@@ -4,38 +4,38 @@ window {
     border-radius: 5px;
 }
 
-#input {
-    border: 1px solid black;
+input {
+    border: 1px #000000;
     background-color: #16033b;
     font-size: 15px;
     border-radius: 10px;
 }
 
-#inner-box {
+inner-box {
     margin: 5px;		
 }
 
-#outer-box {
+outer-box {
     margin: 5px;
 }
 
-#scroll {
+scroll {
     margin: 5px 0px;
     font-size: 15px;
     color: #35557c;
 }
 
-#scroll label {
+scroll label {
     margin: 2px 0px;
 }
 
-#entry:selected {
+entry:selected {
     border-radius: 1px;
     background-color: #35557c;
     color: #2c0b6e;
 }
 
-#text {
+text {
     border: 0px solid red;
     border-radius: 1px;
     margin: 5px;
@@ -44,6 +44,6 @@ window {
 }
 
 
-#text:selected {
+text:selected {
     background-color: #35557c;
 }
