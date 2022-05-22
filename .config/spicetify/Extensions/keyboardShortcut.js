@@ -84,9 +84,9 @@
     // Forward Slash to open search page
     registerBind("/", false, false, false, openSearchPage);
 
-    // F to activate Link Follow function
+    // F + CTRL(modified cause it's overrided by full app display extension) to activate Link Follow function
     const vim = new VimBind();
-    registerBind("F", false, false, false, vim.activate.bind(vim));
+    registerBind("F", true, false, false, vim.activate.bind(vim));
     // Esc to cancel Link Follow
     vim.setCancelKey("ESCAPE");
 
