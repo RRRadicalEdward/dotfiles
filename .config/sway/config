@@ -14,7 +14,7 @@ set $down j
 set $up k
 set $right l
 
-set $term /home/sasha/.cargo/bin/alacritty
+set $term $HOME/.cargo/bin/alacritty
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
@@ -23,7 +23,7 @@ set $menu dmenu_path | rofi -show drun | xargs swaymsg exec --
 include /etc/sway/config-vars.d/*
 
 # set wallpapaer
-exec swaybg --image /home/sasha/1242059.jpg --mode fill
+exec swaybg --image $HOME/1242059.jpg --mode fill
 
 ### Output configuration
 #
@@ -67,7 +67,7 @@ input type:keyboard {
     bindsym $mod+Shift+c reload
 
     # Shutdown/Reboot/Log out/Sleep with wofi
-    bindsym $mod+Shift+e exec sh ~/.config/rofi/rofi-power.sh
+    bindsym $mod+Shift+e exec sh $HOME/.config/rofi/rofi-power.sh
 #
 # Moving around:
 #
@@ -186,7 +186,7 @@ bar {
 }
 
 # gaps
-default_border pixel 3
+default_border pixel 2
 gaps outer 5
 gaps inner 5
 hide_edge_borders smart
@@ -223,10 +223,11 @@ exec swayidle -w \
          timeout 300 'swaylock-effects -C $HOME/.config/swaylock/config' \
          timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
 
-bindsym $mod+l exec swaylock-effects -C ~/.config/swaylock/config 
+bindsym $mod+l exec swaylock-effects -C $HOME/.config/swaylock/config 
 
 # clipboard manager
 exec wl-paste -p -t text --watch clipman store -P
+
 # screenshoting with flameshot
 # a workaround to run flameshot on Wayland  
 exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK
@@ -234,17 +235,16 @@ exec hash dbus-update-activation-environment 2>/dev/null && \
      dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
 
 # bindsym Print exec flameshot gui
-font "FiraCode Nerd Font Mono" 10
+bindsym Print exec flatpak run org.flameshot.Flameshot gui
 
 #Windows configuration
-#                       border  background text    indicator
+#                       border  background text    indicator child_border
 title_align center
-client.focused          #8C9BB5 #2c0b6e    #ffffff #97bbf7
-client.focused_inactive #2664F5 #2c0b6e    #7780a1 #97bbf7
-client.unfocused        #2664F5 #2c0b6e    #7780a1 #97bbf7
-client.urgent           #2664F5 #eb4d4b    #101218 #97bbf7
+titlebar_border_thickness 2
+font "FiraCode Nerd Font Mono" 11
+client.focused          #35557c #2c0b6e    #2664F5 #97bbf7  #35557c
+client.focused_inactive #35557c #2c0b6e    #2664F5 #97bbf7  #35557c
+client.unfocused        #2c0b6e #2c0b6e    #2664F5 #97bbf7  #2c0b6e
+client.urgent           #eb4d4b #eb4d4b    #2664F5 #97bbf7  #eb4d4b
 
-
-exec_always --no-startup-id /home/sasha/.cargo/bin/workstyle &> /tmp/workstyle.log
-
-
+exec_always --no-startup-id $HOME/.cargo/bin/workstyle &> /tmp/workstyle.log
