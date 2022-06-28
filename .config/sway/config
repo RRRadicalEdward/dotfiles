@@ -248,3 +248,5 @@ client.unfocused        #2c0b6e #2c0b6e    #2664F5 #97bbf7  #2c0b6e
 client.urgent           #eb4d4b #eb4d4b    #2664F5 #97bbf7  #eb4d4b
 
 exec_always --no-startup-id $HOME/.cargo/bin/workstyle &> /tmp/workstyle.log
+
+exec sh $HOME/.config/sway/sway-startup.sh
