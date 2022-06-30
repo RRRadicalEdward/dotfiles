@@ -230,12 +230,12 @@ exec wl-paste -p -t text --watch clipman store -P
 
 # screenshoting with flameshot
 # a workaround to run flameshot on Wayland  
-exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK
-exec hash dbus-update-activation-environment 2>/dev/null && \
-     dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
+#exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK
+#exec hash dbus-update-activation-environment 2>/dev/null && \
+#     dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
 
-# bindsym Print exec flameshot gui
-bindsym Print exec flatpak run org.flameshot.Flameshot gui
+exec flatpak run org.flameshot.Flameshot
+bindsym Print exec flatpak run org.flameshot.Flameshot gui --clipboard
 
 #Windows configuration
 #                       border  background text    indicator child_border
@@ -250,3 +250,4 @@ client.urgent           #eb4d4b #eb4d4b    #2664F5 #97bbf7  #eb4d4b
 exec_always --no-startup-id $HOME/.cargo/bin/workstyle &> /tmp/workstyle.log
 
 exec sh $HOME/.config/sway/sway-startup.sh
+exec sh $HOME/.config/sway/battery.sh
