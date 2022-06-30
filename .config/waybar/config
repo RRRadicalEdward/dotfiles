@@ -9,10 +9,10 @@
    ],	   
    "modules-right": [
 	"custom/left",
-	"wlr/taskbar",
-	"custom/left2", "custom/left", 
-	"sway/window",
-	"custom/left2", "custom/left",
+	//"wlr/taskbar",
+	//"custom/left2", "custom/left", 
+	//"sway/window",
+	//"custom/left2", "custom/left",
 	"backlight",
         "custom/left2", "custom/left",
 	"battery",
@@ -35,20 +35,20 @@
           "disable-scroll": false,
           "all-outputs": true,
           "format": "{icon}", 
-          "format-icons": {
-              "1": "1",
-              "2": "2",
-              "3": "3",
-              "4": "4",
-              "5": "5",
-              "6": "6",
-              "7": "7",
-              "8": "8",
-              "9": "9",
-	      "urgent": "❗",
-              "focused": "🚀",
-              "default": "🚌"
-          }
+          //"format-icons": {
+          //    "1": "1",
+          //    "2": "2",
+          //    "3": "3",
+          //    "4": "4",
+          //    "5": "5",
+          //    "6": "6",
+          //    "7": "7",
+          //    "8": "8",
+          //    "9": "9",
+	  //    "urgent": "❗",
+          //    "focused": "🚀",
+          //    "default": "🚌"
+          //}
       },
     "sway/mode": {
         "format": "<span style=\"italic\">{}</span>"
@@ -79,11 +79,7 @@
         "tooltip-format": "MPD (connected)",
         "tooltip-format-disconnected": "MPD (disconnected)"
     },
-    "tray": {
-        // "icon-size": 41,
-        "spacing": 10
-    },
-    "clock": {
+    "clock": {		    
         // "timezone": "America/New_York",
 	"interval": 60,
         "format": "📅 {:%Y-%m-%d 🕑 %H:%M}"
