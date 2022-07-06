@@ -235,7 +235,7 @@ exec wl-paste -p -t text --watch clipman store -P
 #     dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
 
 exec flatpak run org.flameshot.Flameshot
-bindsym Print exec flatpak run org.flameshot.Flameshot gui --clipboard
+bindsym Print exec flatpak run org.flameshot.Flameshot gui
 
 #Windows configuration
 #                       border  background text    indicator child_border
