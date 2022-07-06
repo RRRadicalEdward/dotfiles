@@ -36,7 +36,8 @@
 "telegram" = ""
 "clion" = ""
 "skype" = ""
-
+"slack" = ""
+"thunderbird" = ""
 
 [other]
 fallback_icon = "🤨"
