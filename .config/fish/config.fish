@@ -24,7 +24,7 @@ set -Ux XDG_CONFIG_HOME $HOME/.config
 set -Ux XDG_STATE_HOME $HOME/.local/state
 set -Ux XDG_CACHE_HOME $HOME/.cache
 set -Ux _JAVA_OPTIONS -Djava.util.prefs.userRoot=$XDG_CONFIG_HOME/java
-set -Ux RUSTUP_HOME $XDG_CONFIG_HOME/rustup
+set -Ux RUSTUP_HOME $HOME/.rustup
 
 alias wget="wget --hsts-file=$XDG_DATA_HOME/wget-hsts"
 
