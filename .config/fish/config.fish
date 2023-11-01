@@ -11,6 +11,7 @@ alias la="lsd -la"
 alias at="alacritty-themes"
 export NNN_PLUG='f:fd;o:fzopen;d:diffs;t:nmount;v:imgview;p:-plugin'
 alias nnn "nnn -e"
+alias n "nnn"
 set --export NNN_FIFO "/tmp/nnn.fifo"
 
 fish_add_path /home/sasha/.spicetify
