@@ -35,7 +35,7 @@ Used scripts:
  - `alacritty` - terminal emulator.
  - `bat` - Rust `cat` replacement.
  - `cargo-cache` - cleanup cache produced by _Rust_.
- - `cargo-edit` - modify dependencies in _Cargo.toml_ of a _Rust_'s project from terminal.
+ - `cargo-nextest` - run _Rust_'s tests readlly fast.
  - `cargo-llvm-cov` - code coverage for _Rust_.
  - `cargo-sort`-  sort out a _Cargo.toml_ file.
  - `cargo-update` - update your installed via _cargo_ binaries.
