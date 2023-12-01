@@ -220,10 +220,10 @@ exec [[ $(nmcli -g state general) == "connected" ]] || nmcli connection up ifnam
 # your displays after another 300 seconds, and turn your screens back on when
 # resumed. It will also lock your screen before your computer goes to sleep.
 exec swayidle -w \
-         timeout 300 'swaylock-effects -C $HOME/.config/swaylock/config' \
+         timeout 300 'swaylock -C $HOME/.config/swaylock/config' \
          timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
 
-bindsym $mod+l exec swaylock-effects -C $HOME/.config/swaylock/config 
+bindsym $mod+l exec swaylock -C $HOME/.config/swaylock/config 
 
 # clipboard manager
 exec wl-paste -p -t text --watch clipman store -P
@@ -235,7 +235,7 @@ exec wl-paste -p -t text --watch clipman store -P
 #     dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
 
 exec flatpak run org.flameshot.Flameshot
-bindsym Print exec flatpak run org.flameshot.Flameshot gui
+# bindsym $mod+Shift+p exec flatpak run org.flameshot.Flameshot gui // doesn't work 
 
 #Windows configuration
 #                       border  background text    indicator child_border
@@ -251,3 +251,5 @@ exec_always --no-startup-id $HOME/.cargo/bin/workstyle &> /tmp/workstyle.log
 
 exec sh $HOME/.config/sway/sway-startup.sh
 exec sh $HOME/.config/sway/battery.sh
+
+bindsym $mod+Shift+p exec grim -g "$(slurp)" - | wl-copy  
