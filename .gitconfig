@@ -1,0 +1,15 @@
+[user]
+	name = Alexandr Yusiuk
+	email = thepulticula@gmail.com
+[core]
+	editor = vim
+	excludesfile = /home/sasha/.gitignore
+[alias]
+	adog = log --all --decorate --oneline --graph
+	branches = for-each-ref --sort=-committerdate refs/heads --format='%(color:blue)%(authordate:short) %(color:red)%(objectname:short) %(color:yellow)%(refname:short)%(color:reset) (%(color:green)%(committerdate:relative)%(color:reset)) %(authorname)'
+[commit]
+    verbose = true
+    template = ~/.gitmessage
+[pull]
+    rebase = true
+
