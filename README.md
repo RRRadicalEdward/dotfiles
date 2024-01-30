@@ -44,6 +44,7 @@ Used scripts:
  - `starhip` - cross-shell prompt.
  - `topgrade` - update everything that can be updated from terminal.
  - `workstyle` - dynamically rename workspaces with emoji indicate which programs.
+ - `delta` - A syntax-highlighting pager for git, diff, and grep output.
 
 ## Other
 - `flameshot` - screenshoting tool(kinda buggy on sway btw).

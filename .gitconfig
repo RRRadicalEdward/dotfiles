@@ -1,15 +1,39 @@
+[core]
+    	pager = delta
+
+[interactive]
+    	diffFilter = delta --color-only --features=interactive
+
+[merge]
+    	conflictstyle = diff3
+
+[diff]
+    	tool = delta
+    	colorMoved = default
+
 [user]
 	name = Alexandr Yusiuk
-	email = thepulticula@gmail.com
+	email = aleksandr.yusuk@apriorit.com
+
 [core]
 	editor = vim
 	excludesfile = /home/sasha/.gitignore
+
 [alias]
 	adog = log --all --decorate --oneline --graph
-	branches = for-each-ref --sort=-committerdate refs/heads --format='%(color:blue)%(authordate:short) %(color:red)%(objectname:short) %(color:yellow)%(refname:short)%(color:reset) (%(color:green)%(committerdate:relative)%(color:reset)) %(authorname)'
-[commit]
-    verbose = true
-    template = ~/.gitmessage
-[pull]
-    rebase = true
+	branches = for-each-ref --sort=committerdate refs/heads --format='%(color:blue)%(authordate:short) %(color:red)%(objectname:short) %(color:yellow)%(refname:short)%(color:reset) (%(color:green)%(committerdate:relative)%(color:reset)) %(authorname)'
 
+[commit]
+    	verbose = true
+    	template = ~/.gitmessage
+
+[pull]
+    	rebase = true
+
+[delta]
+    	navigate = true
+    	light = false
+    	line-numbers = true
+    	side-by-side = true
+    	features = dark
+    	how-syntax-themes = true
