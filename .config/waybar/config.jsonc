@@ -7,7 +7,7 @@
   "gtk-layer-shell": true,
   "height": 0,
   "modules-left": ["sway/mode", "sway/workspaces"],
-  "modules-right": ["custom/media", "backlight", "battery","cpu", "memory", "pulseaudio","network", "tray", "sway/language", "clock"],
+  "modules-right": ["custom/media", "cpu", "memory", "pulseaudio","network", "tray", "sway/language", "clock"],
   
   "clock": {
     "interval": 60,

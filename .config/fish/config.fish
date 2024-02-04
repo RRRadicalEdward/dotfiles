@@ -34,3 +34,7 @@ set -Ux CARGO_HOME $HOME/.cargo
 set -Ux LESSHISTFILE $XDG_CACHE_HOME/less/history
 alias nvidia-settings="--config=$XDG_CONFIG_HOME/nvidia/settings"
 alias bat "bat --color=never --wrap=never"
+
+set -Ux VISUAL vim
+set -Ux EDITOR $VISUAL
+

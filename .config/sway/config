@@ -35,7 +35,7 @@ exec swaybg --image $HOME/1242059.jpg --mode fill
 
 ### Input configuration
 input type:keyboard {
-    xkb_layout us,ru,ua
+    xkb_layout us,ru
     xkb_options grp:alt_shift_toggle
     dwt enabled
     tap enabled
@@ -233,10 +233,10 @@ exec [[ $(nmcli -g state general) == "connected" ]] || nmcli connection up ifnam
 # your displays after another 300 seconds, and turn your screens back on when
 # resumed. It will also lock your screen before your computer goes to sleep.
 exec swayidle -w \
-         timeout 300 'swaylock-effects -C $HOME/.config/swaylock/config' \
+         timeout 300 'swaylock -C $HOME/.config/swaylock/config' \
          timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
 
-bindsym $mod+l exec swaylock-effects -C $HOME/.config/swaylock/config 
+bindsym $mod+l exec swaylock -C $HOME/.config/swaylock/config 
 
 # clipboard manager
 exec wl-paste -p -t text --watch clipman store -P
