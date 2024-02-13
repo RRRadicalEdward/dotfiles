@@ -37,3 +37,5 @@
     	side-by-side = true
     	features = dark
     	how-syntax-themes = true
+[rerere]
+	enabled = true
