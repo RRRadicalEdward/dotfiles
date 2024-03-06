@@ -4,9 +4,6 @@
 [interactive]
     	diffFilter = delta --color-only --features=interactive
 
-[merge]
-    	conflictstyle = diff3
-
 [diff]
     	tool = delta
     	colorMoved = default
@@ -22,6 +19,7 @@
 [alias]
 	adog = log --all --decorate --oneline --graph
 	branches = for-each-ref --sort=committerdate refs/heads --format='%(color:blue)%(authordate:short) %(color:red)%(objectname:short) %(color:yellow)%(refname:short)%(color:reset) (%(color:green)%(committerdate:relative)%(color:reset)) %(authorname)'
+	date-now = commit --amend --date=now --no-edit
 
 [commit]
     	verbose = true
