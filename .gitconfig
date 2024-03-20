@@ -20,7 +20,7 @@
 	adog = log --all --decorate --oneline --graph
 	branches = for-each-ref --sort=committerdate refs/heads --format='%(color:blue)%(authordate:short) %(color:red)%(objectname:short) %(color:yellow)%(refname:short)%(color:reset) (%(color:green)%(committerdate:relative)%(color:reset)) %(authorname)'
 	date-now = commit --amend --date=now --no-edit
-
+        wip = commit -m "WIP"
 [commit]
     	verbose = true
     	template = ~/.gitmessage
