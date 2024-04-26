@@ -247,9 +247,10 @@ exec wl-paste -p -t text --watch clipman store -P
 #exec hash dbus-update-activation-environment 2>/dev/null && \
 #     dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
 
-#exec flatpak run org.flameshot.Flameshot
-#bindsym Print exec flatpak run org.flameshot.Flameshot gui --raw | wl-copy
-bindsym $mod+Shift+p exec grim -g "$(slurp)" - | wl-copy
+exec flatpak run org.flameshot.Flameshot
+bindsym $mod+Shift+p exec flatpak run org.flameshot.Flameshot gui --raw | wl-copy
+# Uncomment the following if flameshot doesn't work
+#bindsym $mod+Shift+p exec grim -g "$(slurp)" - | wl-copy
 
 exec_always --no-startup-id $HOME/.cargo/bin/workstyle &> /tmp/workstyle.log
 
