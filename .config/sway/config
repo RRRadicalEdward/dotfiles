@@ -249,6 +249,7 @@ exec wl-paste -p -t text --watch clipman store -P
 
 exec flameshot
 bindsym $mod+Shift+p exec flameshot gui --raw | wl-copy
+for_window [app_id="flameshot"] fullscreen enable global
 # Uncomment the following if flameshot doesn't work
 #bindsym $mod+Shift+p exec grim -g "$(slurp)" - | wl-copy
 
