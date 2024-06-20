@@ -252,7 +252,19 @@ for_window [app_id="flameshot"] fullscreen enable global
 
 exec_always --no-startup-id $HOME/.cargo/bin/workstyle &> /tmp/workstyle.log
 
-exec sh $HOME/.config/sway/sway-startup.sh
+exec bash $HOME/.config/sway/sway-startup.sh
 exec sh $HOME/.config/sway/battery.sh
 # policy kit run to grant GUI temporary root rights 
-exec sh /usr/libexec/polkit-gnome-authentication-agent-1 
+exec /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 
+
+workspace 1 output DP-1
+workspace 2 output DP-1
+workspace 3 output HDMI-A-1
+workspace 4 output HDMI-A-1
+
+# FIXME: the configuration below doesn't open a application to the binded workspace consistently. This needs to be fixed 
+exec swaymsg "workspace 1; exec $HOME/.cargo/bin/alacritty;"
+exec swaymsg "workspace 2; exec firefox;"
+exec swaymsg "workspace 4; exec snap run slack;"
+exec swaymsg "workspace 4; exec chromium https://teams.microsoft.com/"
+exec swaymsg "workspace 3; exec flatpak run com.spotify.Client;"
